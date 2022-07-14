@@ -6,7 +6,7 @@ use \Bitrix\Main\Localization\Loc,
     \Bitrix\Main\ModuleManager,
     \Bitrix\Main\EventManager;
 
-Loc::loadMessages( Loader::getLocal( "modules/infuse.test/include.php" ) );
+Loc::loadMessages(Loader::getLocal("modules/infuse.test/include.php"));
 
 class infuse_test extends \CModule
 {

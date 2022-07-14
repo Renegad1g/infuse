@@ -8,6 +8,14 @@ class Helper
 {
     const MODULE_ID = 'infuse.test';
 
+    /**
+     * Метод для получения только гласных букв у пользователя, который передан в качестве параметра
+     * @param $userId
+     * @return string
+     * @throws \Bitrix\Main\ArgumentException
+     * @throws \Bitrix\Main\ObjectPropertyException
+     * @throws \Bitrix\Main\SystemException
+     */
     public function getUserNameVowels($userId): string
     {
         $words = UserTable::getRow([
@@ -21,6 +29,13 @@ class Helper
         return preg_replace('/[^aeiouy]/i', '', $words);
     }
 
+    /**
+     * Метод для получения всех ID пользователей из БД
+     * @return array
+     * @throws \Bitrix\Main\ArgumentException
+     * @throws \Bitrix\Main\ObjectPropertyException
+     * @throws \Bitrix\Main\SystemException
+     */
     public function getUsersForScope(): array
     {
         $return = UserTable::getList([
